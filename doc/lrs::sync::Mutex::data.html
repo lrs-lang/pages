@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::sync::Mutex::data</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::sync.html">sync</a>::<a href="./lrs::sync::Mutex.html">Mutex</a>::<a href="./lrs::sync::Mutex::data.html">data</a></h1><p>Provides mutable access to the protected data without locking the lock.</p><h2>Syntax</h2><pre>impl&lt;T&gt; <a href="./lrs::sync::Mutex.html">Mutex</a>&lt;T&gt; {
+    fn data(&mut self) -> &amp;mut T
+}</pre><h2>Remarks</h2><p>This is safe because the availability of a mutable reference implies that there are currently no mutex-guards borrowing the mutex. Vice versa, no mutex guards can be created while the data is borrowed.</p></body></html>

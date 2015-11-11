@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::iter::IntoIterator</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::iter.html">iter</a>::<a href="./lrs::iter::IntoIterator.html">IntoIterator</a></h1><p>Objects that can be turned into iterators.</p><h2>Syntax</h2><pre>trait IntoIterator
+    where &lt;&lt;Self as <a href="./lrs::iter::IntoIterator.html">IntoIterator</a>&gt;::IntoIter as <a href="./lrs::iter::Iterator.html">Iterator</a>&gt;::Item = &lt;Self as <a href="./lrs::iter::IntoIterator.html">IntoIterator</a>&gt;::Item,
+{
+    type IntoIter: <a href="./lrs::iter::Iterator.html">Iterator</a>;
+    type Item;
+
+    /* Required methods */
+    fn into_iter(self) -> &lt;Self as <a href="./lrs::iter::IntoIterator.html">IntoIterator</a>&gt;::IntoIter
+}</pre><h2>Associated types</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>IntoIter</td><td><p>The type of the iterator this object can be turned into.</p></td></tr><tr><td>Item</td><td><p>The type that the iterator yields.</p></td></tr></tbody></table><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">self</code></td><td><a href="./lrs::iter::IntoIterator::into_iter.html">into_iter</a></td><td><p>Turns the object into an iterator.</p></td></tr></tbody></table><h2>Remarks</h2><p>This is the trait used by <code>for</code> loops. The object on the right-hand-side has to implement this trait. All iterators implement this trait and simply return themselves.</p></body></html>

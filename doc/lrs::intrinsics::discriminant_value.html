@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Function lrs::intrinsics::discriminant_value</title></head><body><h1>Function <a href="./lrs.html">lrs</a>::<a href="./lrs::intrinsics.html">intrinsics</a>::<a href="./lrs::intrinsics::discriminant_value.html">discriminant_value</a></h1><p>Calculates the discriminant of an enum variant.</p><h2>Syntax</h2><pre>unsafe extern "rust-intrinsic" fn discriminant_value&lt;T&gt;(v: &amp;T) -> u64</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>v</td><td><p>The variant whose discriminant will be calculated.</p></td><tr></tbody></table><h2>Return value</h2><p>Returns the discriminant value cast to an <code>u64</code> or <code>0</code> if the argument does not have a discriminant value.</p><h2>Remarks</h2><p>If the discriminant cannot be represented in an <code>i64</code>, the result is unspecified. Note that it is <code>i64</code>, not <code>u64</code>.</p><h2>Examples</h2><pre>enum T {
+    X,
+    Y,
+}
+
+assert!(unsafe { discriminant_value(&amp;T::X) } == 0);</pre></body></html>

@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::share::RefCell::status</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::share.html">share</a>::<a href="./lrs::share::RefCell.html">RefCell</a>::<a href="./lrs::share::RefCell::status.html">status</a></h1><p>Returns the borrow-status of the object.</p><h2>Syntax</h2><pre>impl&lt;T&gt; <a href="./lrs::share::RefCell.html">RefCell</a>&lt;T&gt; {
+    fn status(&self) -> <a href="./lrs::share::RefCellStatus.html">RefCellStatus</a>
+}</pre><h2>Remarks</h2><p>Note that there are no race conditions between this function and the borrow functions since <code>RefCell</code> is not <code>Sync</code>.</p></body></html>

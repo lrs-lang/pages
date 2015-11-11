@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::fs::FileSystemInfo::from_path</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::fs.html">fs</a>::<a href="./lrs::fs::FileSystemInfo.html">FileSystemInfo</a>::<a href="./lrs::fs::FileSystemInfo::from_path.html">from_path</a></h1><p>Returns information about the filesystem located at a path.</p><h2>Syntax</h2><pre>impl <a href="./lrs::fs::FileSystemInfo.html">FileSystemInfo</a> {
+    fn from_path&lt;P&gt;(path: P) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::fs::FileSystemInfo.html">FileSystemInfo</a>, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where P: <a href="./lrs::string::ToCString.html">ToCString</a>,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>path</td><td><p>A path inside the filesystem's mount point.</p></td><tr></tbody></table></body></html>

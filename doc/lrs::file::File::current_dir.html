@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::file::File::current_dir</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::file.html">file</a>::<a href="./lrs::file::File.html">File</a>::<a href="./lrs::file::File::current_dir.html">current_dir</a></h1><p>Creates a file that points to the current working directory.</p><h2>Syntax</h2><pre>impl <a href="./lrs::file::File.html">File</a> {
+    fn current_dir() -> <a href="./lrs::file::File.html">File</a>
+}</pre><h2>Return value</h2><p>Returns a file that points to the current working directory.</p><h2>Remarks</h2><p>This call does not actually open a directory. The returned <code>File</code> is thus affected by changes of the global current working directory via <a href="./lrs::process::set_cwd.html">lrs::process::set_cwd</a> . If you require a pointer to the current directory that is not affected by changes to the current working directory of the process, use the following code:</p><pre>let file = try!(File::open(".", FILE_PATH);</pre><p>This call is mostly useful when working with interfaces that require an argument which points to a directory. For example, <a href="./lrs::file::File::open.html"><code>File::open</code></a> is implemented like this:</p><pre>pub fn open_read&lt;P&gt;(path: P) -&gt; Result&lt;File&gt;
+    where P: ToCString,
+{
+    File::current_dir().rel_open_read(path)
+}</pre><h2>See also</h2><ul><li><p><a href="./lrs::process::set_cwd.html">lrs::process::set_cwd</a></p></li></ul></body></html>

@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::ringbuf::DynRingBuf::reserve</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::ringbuf.html">ringbuf</a>::<a href="./lrs::ringbuf::DynRingBuf.html">DynRingBuf</a>::<a href="./lrs::ringbuf::DynRingBuf::reserve.html">reserve</a></h1><p>Reserves memory for additional elements.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::ringbuf::DynRingBuf.html">DynRingBuf</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn reserve(&mut self, n: usize) -> <a href="./lrs::result::Result.html">Result</a>&lt;(), <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>n</td><td><p>The number of elements for which memory should be reserved.</p></td><tr></tbody></table></body></html>

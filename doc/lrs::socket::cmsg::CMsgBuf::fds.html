@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::socket::cmsg::CMsgBuf::fds</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::socket.html">socket</a>::<a href="./lrs::socket::cmsg.html">cmsg</a>::<a href="./lrs::socket::cmsg::CMsgBuf.html">CMsgBuf</a>::<a href="./lrs::socket::cmsg::CMsgBuf::fds.html">fds</a></h1><p>Adds a message containing file descriptors to the buffer.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::socket::cmsg::CMsgBuf.html">CMsgBuf</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn fds(&mut self, fds: &amp;[i32]) -> <a href="./lrs::result::Result.html">Result</a>&lt;(), <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>fds</td><td><p>The file descriptors to be added.</p></td><tr></tbody></table></body></html>

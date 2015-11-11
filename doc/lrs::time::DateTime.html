@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::time::DateTime</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::time.html">time</a>::<a href="./lrs::time::DateTime.html">DateTime</a></h1><p>An expanded date.</p><h2>Syntax</h2><pre>struct DateTime {
+    offset: i64,
+    year: i64,
+    day_in_year: i16,
+    month: i8,
+    day: i8,
+    hour: i8,
+    minute: i8,
+    second: i8,
+    weekday: <a href="./lrs::time::Weekday.html">Weekday</a>,
+    summer_time: bool,
+}</pre><h2>Fields</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>offset</td><td><p>The offset from UTC in seconds.</p></td></tr><tr><td>year</td><td><p>The year.</p></td></tr><tr><td>day_in_year</td><td><p>The day in the year starting at 0.</p></td></tr><tr><td>month</td><td><p>The month in the year starting at 1.</p></td></tr><tr><td>day</td><td><p>The day in the month starting at 1.</p></td></tr><tr><td>hour</td><td><p>The hour.</p></td></tr><tr><td>minute</td><td><p>The minute.</p></td></tr><tr><td>second</td><td><p>The second.</p></td></tr><tr><td>weekday</td><td><p>The weekday.</p></td></tr><tr><td>summer_time</td><td><p>Whether the date falls into summer time.</p></td></tr></tbody></table><h2>Trait implementations</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::time::DateTime::Clone.html">Clone</a></td><td><p>Objects that can be duplicated.</p></td></tr><tr><td><a href="./lrs::time::DateTime::Copy.html">Copy</a></td><td><p>Objects that can safely be copied via <code>memcpy</code>.</p></td></tr><tr><td><a href="./lrs::time::DateTime::Debug.html">Debug</a></td><td><p>Objects that can be formatted in a "debug" form.</p></td></tr><tr><td><a href="./lrs::time::DateTime::Eq.html">Eq</a></td><td><p>Objects that implement the binary <code>==</code> and <code>!=</code> operators.</p></td></tr><tr><td><a href="./lrs::time::DateTime::MaybeClone.html">MaybeClone</a></td><td><p>Objects that can be duplicated.</p></td></tr></tbody></table></body></html>

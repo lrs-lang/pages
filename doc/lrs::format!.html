@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Macro lrs::format!</title></head><body><h1>Macro <a href="./lrs.html">lrs</a>::<a href="./lrs::format!.html">format!</a></h1><p>Formats a value into a <code>ByteString</code>.</p><h2>Syntax</h2><pre>( $ fmt : expr , $ ( $ arg : tt ) * ) => {
+{
+let mut vec = Vec:: new (  ) ; write ! ( vec , $ fmt , $ ( $ arg ) * ) ; ::
+std:: string:: ByteString:: from_vec ( vec ) } } ;</pre></body></html>

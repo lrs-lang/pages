@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Function lrs::cmp::min_mut</title></head><body><h1>Function <a href="./lrs.html">lrs</a>::<a href="./lrs::cmp.html">cmp</a>::<a href="./lrs::cmp::min_mut.html">min_mut</a></h1><p>Calculates the minimum of two values by mutable reference.</p><h2>Syntax</h2><pre>fn min_mut&lt;T&gt;(one: &amp;'a mut T, two: &amp;'a mut T) -> &amp;'a mut T
+    where T: <a href="./lrs::cmp::Ord.html">Ord</a>&lt;T&gt; + ?<a href="./lrs::marker::Sized.html">Sized</a>,</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>one</td><td><p>The first value.</p></td><tr><tr><td>two</td><td><p>The second value.</p></td><tr></tbody></table><h2>Return value</h2><p>The returns the smaller one of the two values.</p><h2>Remarks</h2><p>If the comparison of both objects returns that they are equal, the first one is returned.</p><h2>Examples</h2><pre>let x = &amp;mut 1;
+let y = &amp;mut 2;
+*min(x, y) = 3;
+assert!(*x == 3);</pre><h2>See also</h2><ul><li><p><a href="./lrs::cmp::min.html">lrs::cmp::min</a></p></li><li><p><a href="./lrs::cmp::min_ref.html">lrs::cmp::min_ref</a></p></li></ul></body></html>

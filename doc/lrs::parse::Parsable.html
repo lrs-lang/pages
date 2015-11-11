@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::parse::Parsable</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::parse.html">parse</a>::<a href="./lrs::parse::Parsable.html">Parsable</a></h1><p>Types that are parsable.</p><h2>Syntax</h2><pre>trait Parsable {
+    /* Required methods */
+    fn parse_bytes_init(bytes: &amp;[u8]) -> <a href="./lrs::result::Result.html">Result</a>&lt;(Self, usize), <a href="./lrs::error::Errno.html">Errno</a>&gt;
+
+    /* Provided methods */
+    fn parse_bytes(bytes: &amp;[u8]) -> <a href="./lrs::result::Result.html">Result</a>&lt;Self, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break"></code></td><td><a href="./lrs::parse::Parsable::parse_bytes.html">parse_bytes</a></td><td><p>Tries to parse a byte slice as an object of this type.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::parse::Parsable::parse_bytes_init.html">parse_bytes_init</a></td><td><p>Tries to parse an initial sequence of bytes as an object of this type.</p></td></tr></tbody></table></body></html>

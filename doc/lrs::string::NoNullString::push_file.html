@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::string::NoNullString::push_file</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::string.html">string</a>::<a href="./lrs::string::NoNullString.html">NoNullString</a>::<a href="./lrs::string::NoNullString::push_file.html">push_file</a></h1><p>Appends a filename to the string.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::string::NoNullString.html">NoNullString</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn push_file&lt;F&gt;(&mut self, name: F) -> <a href="./lrs::result::Result.html">Result</a>&lt;(), <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where F: <a href="./lrs::string::AsNoNullStr.html">AsNoNullStr</a>,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td><p>The name of the file.</p></td><tr></tbody></table><h2>Remarks</h2><p>This first appends a '/' and then the provided filename to the buffer.</p></body></html>

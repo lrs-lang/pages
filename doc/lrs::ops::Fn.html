@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::ops::Fn</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::ops.html">ops</a>::<a href="./lrs::ops::Fn.html">Fn</a></h1><p>Objects that implement the immutable function call operator.</p><h2>Syntax</h2><pre>trait Fn&lt;Args&gt; : <a href="./lrs::ops::FnMut.html">FnMut</a>&lt;Args&gt; {
+    /* Required methods */
+    extern "rust-call" fn call(&self, args: Args) -> &lt;Self as <a href="./lrs::ops::FnOnce.html">FnOnce</a>&lt;Args&gt;&gt;::Output
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::ops::Fn::call.html">call</a></td><td><p>The method that is called by the operator.</p></td></tr></tbody></table></body></html>

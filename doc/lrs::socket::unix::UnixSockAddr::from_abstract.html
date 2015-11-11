@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::socket::unix::UnixSockAddr::from_abstract</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::socket.html">socket</a>::<a href="./lrs::socket::unix.html">unix</a>::<a href="./lrs::socket::unix::UnixSockAddr.html">UnixSockAddr</a>::<a href="./lrs::socket::unix::UnixSockAddr::from_abstract.html">from_abstract</a></h1><p>Creates a new abstract Unix socket address.</p><h2>Syntax</h2><pre>impl <a href="./lrs::socket::unix::UnixSockAddr.html">UnixSockAddr</a> {
+    fn from_abstract&lt;T&gt;(buf: &amp;mut [u8], name: T) -> <a href="./lrs::result::Result.html">Result</a>&lt;&amp;mut <a href="./lrs::socket::unix::UnixSockAddr.html">UnixSockAddr</a>, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where T: AsRef&lt;[u8]&gt;,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>buf</td><td></td><tr><tr><td>name</td><td><p>The address of the socket address.</p></td><tr></tbody></table></body></html>

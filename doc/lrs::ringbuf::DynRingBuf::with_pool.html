@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::ringbuf::DynRingBuf::with_pool</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::ringbuf.html">ringbuf</a>::<a href="./lrs::ringbuf::DynRingBuf.html">DynRingBuf</a>::<a href="./lrs::ringbuf::DynRingBuf::with_pool.html">with_pool</a></h1><p>Creates a new ring buffer with a memory pool.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::ringbuf::DynRingBuf.html">DynRingBuf</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn with_pool(pool: &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool) -> <a href="./lrs::ringbuf::DynRingBuf.html">DynRingBuf</a>&lt;T, H&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>pool</td><td><p>The pool to draw memory from.</p></td><tr></tbody></table></body></html>

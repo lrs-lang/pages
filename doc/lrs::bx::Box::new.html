@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::bx::Box::new</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::bx.html">bx</a>::<a href="./lrs::bx::Box.html">Box</a>::<a href="./lrs::bx::Box::new.html">new</a></h1><p>Creates a new box.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::bx::Box.html">Box</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: Default,
+{
+    fn new() -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::bx::BoxBuf.html">BoxBuf</a>&lt;T, H&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Remarks</h2><p>This function first creates an <code>BoxBuf</code> which can then be used to create a real <code>Box</code> as shown in the example. The function does not take a value argument itself since this would complicate handling the case where allocating memory fails.   = Examples</p><pre>let bx: Box&lt;u8&gt; = try!(Box::new()).set(0);</pre></body></html>

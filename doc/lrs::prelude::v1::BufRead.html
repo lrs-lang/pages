@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::prelude::v1::BufRead</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::prelude.html">prelude</a>::<a href="./lrs::prelude::v1.html">v1</a>::<a href="./lrs::prelude::v1::BufRead.html">BufRead</a></h1><p>Objects that wrap a byte-stream for reading and contain a buffer.</p><h2>Syntax</h2><pre>trait BufRead : <a href="./lrs::io::Read.html">Read</a> {
+    /* Required methods */
+    fn consume(&mut self, num: usize) -> usize
+    fn copy_until&lt;W&gt;(&mut self, dst: &amp;mut W, b: u8) -> <a href="./lrs::result::Result.html">Result</a>&lt;usize, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where W: <a href="./lrs::fmt::Write.html">Write</a>,
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::prelude::v1::BufRead::consume.html">consume</a></td><td><p>Removes a certain number of bytes from the buffer.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::prelude::v1::BufRead::copy_until.html">copy_until</a></td><td><p>Copies bytes from the stream to a writer until a certain byte occurs.</p></td></tr></tbody></table></body></html>

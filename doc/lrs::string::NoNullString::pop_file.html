@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::string::NoNullString::pop_file</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::string.html">string</a>::<a href="./lrs::string::NoNullString.html">NoNullString</a>::<a href="./lrs::string::NoNullString::pop_file.html">pop_file</a></h1><p>Removes the file-part of the string, returning a reference to it.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::string::NoNullString.html">NoNullString</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn pop_file(&mut self) -> &amp;mut <a href="./lrs::string::NoNullStr.html">NoNullStr</a>
+}</pre><h2>Return value</h2><p>Returns the now removed file-part.</p><h2>Remarks</h2><p>This first searches for the last '/' in the string, removes the trailing part up to and including the '/' and returns a reference to the part after the '/'.</p></body></html>

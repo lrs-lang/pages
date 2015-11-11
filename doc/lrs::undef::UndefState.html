@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::undef::UndefState</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::undef.html">undef</a>::<a href="./lrs::undef::UndefState.html">UndefState</a></h1><p>Types that are not valid when they contain certain bit patterns.</p><h2>Syntax</h2><pre>unsafe trait UndefState {
+    /* Required methods */
+    unsafe fn is_undef(val: *const Self, n: usize) -> bool
+    fn num() -> usize
+    unsafe fn set_undef(val: *mut Self, n: usize) -> ()
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break"></code></td><td><a href="./lrs::undef::UndefState::is_undef.html">is_undef</a></td><td><p>Checks if a storage location is in an undefined state.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::undef::UndefState::num.html">num</a></td><td><p>The number of available undefined states.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::undef::UndefState::set_undef.html">set_undef</a></td><td><p>Creates an undefined state.</p></td></tr></tbody></table><h2>Remarks</h2><p>This is the opposite of <a href="./lrs::marker::Pod.html">Pod</a>. That is, every type is either <code>Pod</code> or <code>UndefState</code>. (But note that not all types need to implement either of those types.)</p><p>A type that implements this trait has a constant number of so-called undefined states.</p><h2>Examples</h2><p>Objects of type <code>char</code> cannot contain surrogate code points. Since <code>char</code> is just a wrapper of <code>u32</code>, the following implementation is valid and gives us <code>2048</code> undefined states:</p><pre>unsafe impl UndefState for char {
+    fn num() -&gt; usize { 0xE000 - 0xD800 }
+ 
+    unsafe fn set_undef(val: *mut char, n: usize) {
+        assert!(n &lt; Self::num());
+        *(val as *mut u32) = n as u32 + 0xE000;
+    }
+ 
+    unsafe fn is_undef(val: *const char, n: usize) -&gt; bool {
+        assert!(n &lt; Self::num());
+        *(val as *const u32) == n as u32 + 0xE000
+    }
+}</pre></body></html>

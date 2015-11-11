@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::thread::Builder::scoped</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::thread.html">thread</a>::<a href="./lrs::thread::Builder.html">Builder</a>::<a href="./lrs::thread::Builder::scoped.html">scoped</a></h1><p>Spawns a new scoped thread.</p><h2>Syntax</h2><pre>impl <a href="./lrs::thread::Builder.html">Builder</a> {
+    fn scoped&lt;'a, F&gt;(self, f: F) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::thread::JoinGuard.html">JoinGuard</a>&lt;'a&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where F: <a href="./lrs::ops::FnOnce.html">FnOnce</a>() -> () + <a href="./lrs::marker::Send.html">Send</a> + 'a,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>f</td><td><p>The closure that will be run in the new thread.</p></td><tr></tbody></table><h2>Remarks</h2><p>The thread will automatically be joined when the guard's destructor runs.</p></body></html>

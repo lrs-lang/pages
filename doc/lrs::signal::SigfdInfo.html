@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::signal::SigfdInfo</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::signal.html">signal</a>::<a href="./lrs::signal::SigfdInfo.html">SigfdInfo</a></h1><p>Information about a signal received via a <code>Sigfd</code>.</p><h2>Syntax</h2><pre>struct SigfdInfo {
+    signo: u32,
+    errno: i32,
+    code: i32,
+    pid: u32,
+    uid: u32,
+    fd: i32,
+    tid: u32,
+    band: u32,
+    overrun: u32,
+    trapno: u32,
+    status: i32,
+    int: i32,
+    ptr: u64,
+    utime: u64,
+    stime: u64,
+    addr: u64,
+    addr_lsb: u16,
+    padding: [u8; 46],
+}</pre><h2>Fields</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>signo</td><td><p>The signal number.</p></td></tr><tr><td>errno</td><td><p>Unused.</p></td></tr><tr><td>code</td><td><p>Signal code.</p></td></tr><tr><td>pid</td><td><p>Sending process id.</p></td></tr><tr><td>uid</td><td><p>Real user id of the sending process.</p></td></tr><tr><td>fd</td><td><p>Ready file descriptor.</p></td></tr><tr><td>tid</td><td><p>Timer id.</p></td></tr><tr><td>band</td><td><p>Band event.</p></td></tr><tr><td>overrun</td><td><p>Timer overrruns.</p></td></tr><tr><td>trapno</td><td><p>Trap number.</p></td></tr><tr><td>status</td><td><p>Exit status.</p></td></tr><tr><td>int</td><td><p>Integer.</p></td></tr><tr><td>ptr</td><td><p>Pointer.</p></td></tr><tr><td>utime</td><td><p>User CPU time consumed.</p></td></tr><tr><td>stime</td><td><p>System CPU time consumed.</p></td></tr><tr><td>addr</td><td><p>Address that generated the signal.</p></td></tr><tr><td>addr_lsb</td><td><p>Least significant bit of address.</p></td></tr><tr><td>padding</td><td></td></tr></tbody></table><h2>Static methods</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::signal::SigfdInfo::new.html">new</a></td><td><p>Creates a new, empty SigfdInfo.</p></td></tr></tbody></table><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::signal::SigfdInfo::signal.html">signal</a></td><td><p>Returns the signal that generated the information.</p></td></tr></tbody></table><h2>Trait implementations</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::signal::SigfdInfo::Clone.html">Clone</a></td><td><p>Objects that can be duplicated.</p></td></tr><tr><td><a href="./lrs::signal::SigfdInfo::Copy.html">Copy</a></td><td><p>Objects that can safely be copied via <code>memcpy</code>.</p></td></tr><tr><td><a href="./lrs::signal::SigfdInfo::MaybeClone.html">MaybeClone</a></td><td><p>Objects that can be duplicated.</p></td></tr><tr><td><a href="./lrs::signal::SigfdInfo::Pod.html">Pod</a></td><td><p>Objects that are safe to use if they contain a random bit pattern.</p></td></tr></tbody></table></body></html>

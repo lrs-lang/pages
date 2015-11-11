@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Macro lrs::print!</title></head><body><h1>Macro <a href="./lrs.html">lrs</a>::<a href="./lrs::print!.html">print!</a></h1><p>Prints a value to stdout.</p><p>Note that stdout always refers to the file descriptor <code>1</code>.</p><h2>Syntax</h2><pre>( $ fmt : expr ) => { write ! ( :: std:: fd:: STDOUT , $ fmt ) } ; (
+$ fmt : expr , $ ( $ arg : tt ) * ) => {
+write ! ( :: std:: fd:: STDOUT , $ fmt , $ ( $ arg ) * ) } ;</pre></body></html>

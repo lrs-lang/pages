@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Constant lrs::sync::RAW_CONDVAR_INIT</title></head><body><h1>Constant <a href="./lrs.html">lrs</a>::<a href="./lrs::sync.html">sync</a>::<a href="./lrs::sync::RAW_CONDVAR_INIT.html">RAW_CONDVAR_INIT</a></h1><p>An initializer for static condition variables.</p><h2>Syntax</h2><pre>const RAW_CONDVAR_INIT: <a href="./lrs::sync::RawCondvar.html">RawCondvar</a> = RawCondvar{lock: LOCK_INIT,
+           inner:
+               Cell{data:
+                        Inner{left_end: 0 as *mut Node,
+                              right_end: 0 as *mut Node,
+                              user_lock: None,},},};</pre></body></html>

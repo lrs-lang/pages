@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::user::Information::find_by_with_pool</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::user.html">user</a>::<a href="./lrs::user::Information.html">Information</a>::<a href="./lrs::user::Information::find_by_with_pool.html">find_by_with_pool</a></h1><p>Finds the first user that satisfies the predicate.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::user::Information.html">Information</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: <a href="./lrs::marker::Copy.html">Copy</a>,
+{
+    fn find_by_with_pool&lt;F&gt;(pred: F, pool: &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::user::Information.html">Information</a>&lt;H&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where F: <a href="./lrs::ops::Fn.html">Fn</a>(&amp;<a href="./lrs::user::Info.html">Info</a>) -> bool,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>pred</td><td><p>The predicate.</p></td><tr><tr><td>pool</td><td><p>The pool in which the information will be stored.</p></td><tr></tbody></table></body></html>

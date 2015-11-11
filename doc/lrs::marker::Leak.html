@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::marker::Leak</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::marker.html">marker</a>::<a href="./lrs::marker::Leak.html">Leak</a></h1><p>Objects that can be leaked without causing memory unsafety.</p><h2>Syntax</h2><pre>unsafe trait Leak</pre><h2>Remarks</h2><p>In normal, safe code, the compiler inserts calls to destructors at the end of object's lifetimes, e.g,</p><pre>{
+    let x = X;
+}</pre><p>inserts a call to the <code>X</code> destructor at the end of the block. However, the compiler cannot do this if it doesn't know the lifetime of an object. This happens when you use raw pointers which opt out of lifetimes. In those cases it is the job of the programmer to insert destructor calls. For example, a vector looks roughly like this:</p><pre>struct Vec&lt;T&gt; {
+    ptr: *mut T,
+    len: usize,
+    cap: usize,
+}</pre><p>Since the <code>T</code>s contained in the vector are behind a raw pointer, the compiler does not destroy them automatically at the end of their lifetime. The author of the <code>Vec</code> structure has to manually call the destructor for all of its <code>T</code> objects in the destructor of <code>Vec</code>:</p><pre>fn drop(&amp;mut self) {
+    for i in 0..self.len {
+        unsafe {
+            // Bring the contained object back from behind the pointer so that it's
+            // once again managed by the compiler which will call the destructor of
+            // `_t` at the end of the `unsafe` block.
+            let _t = ptr::read(self.ptr.add(i));
+        }
+    }
+    // Deallocate `self.ptr` here
+    // ...
+}</pre><p>In the case of vectors this is very easy: Since the lifetime of the vector is always shorter than the lifetime of the contained objects, we can rely on the <code>drop</code> code above running before the end of the lifetimes of the <code>T</code>.</p><p>There are, however, some data structures for which this is not easy. For example, the destructor of <code>Rc</code> looks like this:</p><pre>fn drop(&amp;mut self) {
+    self.number_of_references -= 1;
+    if self.number_of_references == 0 {
+        // Call the destructor of the contained object
+    }
+}</pre><p>As you can see, we don't always call the destructor of the contained object at the end of the lifetime of the <code>Rc</code>. At first it seems that this is no problem since, in order to have <code>number_of_references &gt; 1</code> you have to have cloned the <code>Rc</code> and all of the clones are bound by the lifetime of <code>T</code>. Once the last cloned <code>Rc</code> is dropped, it should call the destructor of the <code>T</code>.</p><p>But this doesn't account for the possibility of cycles. If we put a clone of the <code>Rc</code> into the <code>Rc</code> itself, then the destructor that destroys the last <code>Rc</code> clone will never run and thus the <code>T</code> will never be destroyed. Here is an example that generates such a cycle:</p><pre>struct T;
+ 
+impl Drop for T {
+    fn drop(&amp;mut self) {
+        println!("dropped");
+    }
+}
+ 
+struct X&lt;T&gt; {
+    _t: T,
+    rc: Option&lt;Rc&lt;RefCell&lt;X&lt;T&gt;&gt;&gt;&gt;,
+}
+ 
+fn main() {
+    let rc = Rc::new(RefCell::new(X { _t: T, rc: None }));
+    rc.borrow_mut().rc = Some(rc.clone());
+}</pre><p>You will notice that the <code>dropped</code> message will never be printed even though the end of the lifetime of <code>T</code> is reached at the end of the <code>main</code> block.</p><p>Most of the time this is not a problem, even if destructors don't run, this cannot cause memory unsafety. However, the safety of some structures depends on the guarantee that destructors run at the end of object's lifetimes. For example, the <code>JoinGuard</code> returned by <code>thread::scoped</code> must have its destructor run at the end of its lifetime or the behavior is undefined.</p><p>For this reason we introduce the <code>Leak</code> trait which marks objects that don't need to have their destructor run at the end of their lifetime. By default, every object is <code>Leak</code>. If your object contains an object that is <code>!Leak</code>, then it's automatically <code>!Leak</code> itself but you can opt into <code>Leak</code> by implementing <code>Leak</code> explicitly. If you want to explicitly opt out of <code>Leak</code>, then you have to implement <code>!Leak</code> for your object. For example, <code>JoinGuard</code> explicitly implements <code>!Leak</code>.</p><p>If you create a new container such as <code>Vec</code> or <code>Rc</code> which owns objects behind raw pointers and if you cannot guarantee that the object's destructors will be run at the end of their lifetimes, then you have to add the <code>Leak</code> bound to your trait bounds. For example, the <code>Rc</code> type can be defined as follows:</p><pre>struct Rc&lt;T: Leak&gt; {
+    data: *mut Inner&lt;T&gt;,
+}</pre><p>  where <code>Inner&lt;T&gt;</code> is an allocated object that contains the <code>T</code> and the reference count.</p><p>The simple criterion is as follows:</p><p><b></b>If the destructor of your object calls the destructor of the contained object only if a certain condition is met, add the <code>Leak</code> bound.<b></b></p></body></html>

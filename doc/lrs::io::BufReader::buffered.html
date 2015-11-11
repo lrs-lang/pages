@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::io::BufReader::buffered</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::io.html">io</a>::<a href="./lrs::io::BufReader.html">BufReader</a>::<a href="./lrs::io::BufReader::buffered.html">buffered</a></h1><p>Creates a new buffered reader that is backed by borrowed memory.</p><h2>Syntax</h2><pre>impl&lt;'a, R&gt; <a href="./lrs::io::BufReader.html">BufReader</a>&lt;R, <a href="./lrs::alloc::NoMem.html">NoMem</a>&lt;'a&gt;&gt;
+    where R: <a href="./lrs::io::Read.html">Read</a>,
+{
+    fn buffered(read: R, buf: &amp;'a mut [u8]) -> <a href="./lrs::io::BufReader.html">BufReader</a>&lt;R, <a href="./lrs::alloc::NoMem.html">NoMem</a>&lt;'a&gt;&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>read</td><td><p>The reader that will be wrapped in the buffered reader.</p></td><tr><tr><td>buf</td><td><p>The buffer that will be used to back the buffered reader.</p></td><tr></tbody></table><h2>Remarks</h2><p>The length of <code>buf</code> will be decreased to the previous power of two.</p></body></html>

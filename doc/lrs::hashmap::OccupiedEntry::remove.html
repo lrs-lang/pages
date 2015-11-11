@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::hashmap::OccupiedEntry::remove</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::hashmap.html">hashmap</a>::<a href="./lrs::hashmap::OccupiedEntry.html">OccupiedEntry</a>::<a href="./lrs::hashmap::OccupiedEntry::remove.html">remove</a></h1><p>Removes the contained value and key.</p><h2>Syntax</h2><pre>impl&lt;'a, Key, Value, Bucket&gt; <a href="./lrs::hashmap::OccupiedEntry.html">OccupiedEntry</a>&lt;'a, Key, Value, Bucket&gt;
+    where Bucket: Bucket&lt;Key, Value&gt;,
+          Key: <a href="./lrs::ops::Eq.html">Eq</a>&lt;Key&gt; + <a href="./lrs::hash::Hash.html">Hash</a>,
+{
+    fn remove(self) -> (<a href="./lrs::hashmap::VacantEntry.html">VacantEntry</a>&lt;'a, Key, Value, Bucket&gt;, Key, Value)
+}</pre></body></html>

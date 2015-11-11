@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait implementation lrs::user::Info::ToOwned</title></head><body><h1>Trait implementation <a href="./lrs.html">lrs</a>::<a href="./lrs::user.html">user</a>::<a href="./lrs::user::Info.html">Info</a>::<a href="./lrs::user::Info::ToOwned.html">ToOwned</a></h1><p>Objects that can be converted into an owned version.</p><h2>Syntax</h2><pre>impl&lt;'a, H&gt; <a href="./lrs::prelude::v1::ToOwned.html">ToOwned</a>&lt;H&gt; for <a href="./lrs::user::Info.html">Info</a>&lt;'a&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: <a href="./lrs::marker::Copy.html">Copy</a>,
+{
+    type Owned = <a href="./lrs::user::Information.html">Information</a>&lt;H&gt;;
+}</pre></body></html>

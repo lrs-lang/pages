@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::getopt::Getopt::new</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::getopt.html">getopt</a>::<a href="./lrs::getopt::Getopt.html">Getopt</a>::<a href="./lrs::getopt::Getopt::new.html">new</a></h1><p>Creates a new parser.</p><h2>Syntax</h2><pre>impl&lt;'a, I&gt; <a href="./lrs::getopt::Getopt.html">Getopt</a>&lt;'a, I&gt;
+    where I: <a href="./lrs::iter::Iterator.html">Iterator</a>&lt;Item = &amp;'static <a href="./lrs::string::CStr.html">CStr</a>&gt;,
+{
+    fn new(args: I, opts: &amp;'a [(<a href="./lrs::option::Option.html">Option</a>&lt;char&gt;, <a href="./lrs::option::Option.html">Option</a>&lt;&amp;'static str&gt;, bool)]) -> <a href="./lrs::getopt::Getopt.html">Getopt</a>&lt;'a, I&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>args</td><td><p>An iterator over the command line arguments.</p></td><tr><tr><td>opts</td><td><p>The arguments that take (optional) parameters.</p></td><tr></tbody></table><h2>Remarks</h2><p>The args argument should start at the first real argument, not at the program name. See the example below.</p><p>The opts argument has the following structure: (short name, long name, optional). The short name is the character used for parsing of POSIX-style (<code>-a</code>) options. The long name is the string used for parsing GNU-style (<code>--argument</code>) options. The short name <b>must</b> be in the ASCII set. The optional parameter defines whether the parameter of this argument is optional.</p><p>The opts argument should thus only contain those arguments that take an (optional) parameter.</p><p>The parsing proceeds as follows:</p><ul><li><p>When an argument of the form <code>--</code> is encountered, the parsing stops.</p></li><li><p>When an argument shorter than two characters or an argument that doesn't start with a <code>-</code> is encountered, the parsing stops.</p></li><li><p>If an argument starting with <code>--</code> is encountered, a long argument is parsed as follows:</p><ul><li><p>If it starts with one of the arguments that take an (optional) parameter and the character after the argument name is a <code>=</code>, then the part after the <code>=</code> is returned as the parameter. (For example: <code>--argument=yo</code>)</p></li><li><p>If it is exactly one of the arguments that take an optional parameter, then <code>None</code> is returned as the parameter. (For example: <code>--argument</code>)</p></li><li><p>If it is exactly one of the arguments that take a non-optional parameter, then the next argument (if any) is returned as the parameter. (For example: <code>--argument yo</code>)</p></li><li><p>Otherwise the argument is returned as a whole.</p></li></ul></li><li><p>Otherwise, if an argument starting with a <code>-</code> is encountered, each byte is parsed as follows:</p><ul><li><p>If the byte is one of the arguments that take an (optional) parameter and we're not at the end of the current argument, then the rest of the current argument is returned as the parameter. (For example: <code>-ayo</code>)</p></li><li><p>If the byte is one of the arguments that take an optional parameter and we're at the end of the current argument, then <code>None</code> is returned as the parameter. (For example <code>-a</code>)</p></li><li><p>If the byte is one of the arguments that take a non-optional parameter and we're at the end of the current argument, then the next argument (if any) is returned as the parameter. (For example: <code>-a yo</code>)</p></li><li><p>Otherwise the byte is returned as the argument and parsing continues at the next byte.</p></li></ul></li></ul><h2>Examples</h2><p>The following example contains the code for parsing argument of a program with the following help message:</p><pre>Usage: my_program [OPTIONS]*
+
+Options:
+  -a, --arg[=PARAMETER]
+  -b PARAMETER
+      --something-else
+  -c</pre><p>The code:</p><pre>let mut args = env::args();
+args.next(); // skip program name
+
+let params = [
+    (Some('a'), Some("arg"), true),
+    (Some('b'), None, false),
+];
+
+for (arg, param) in Getopt::new(args, &amp;params) {
+    match arg.as_ref() {
+        b"a" | b"arg" =&gt; {
+            if let Some(param) = param {
+                // ...
+            } else {
+                // ...
+            }
+        },
+        b"b" =&gt; {
+            if let Some(param) = param {
+                // ...
+            } else {
+                // errer: missing parameter
+            }
+        },
+        b"something-else" =&gt; {
+            // ...
+        }
+        b"c" =&gt; {
+            // ...
+        }
+        arg =&gt; {
+            // error: unexpected argument
+        }
+    }
+}</pre><p>This program can be invoked as follows:</p><pre>my_program -c
+my_program -cc
+my_program --something-else -c
+my_program -cbPARAMETER
+my_program -cb PARAMETER
+my_program b PARAMETER
+my_program --arg=PARAMETER
+my_program -aPARAMETER</pre></body></html>

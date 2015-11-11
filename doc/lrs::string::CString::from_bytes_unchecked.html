@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::string::CString::from_bytes_unchecked</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::string.html">string</a>::<a href="./lrs::string::CString.html">CString</a>::<a href="./lrs::string::CString::from_bytes_unchecked.html">from_bytes_unchecked</a></h1><p>Creates a <code>CString</code> by wrapping a vector without checking the vector for validity.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::string::CString.html">CString</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    unsafe fn from_bytes_unchecked(bytes: <a href="./lrs::vec::Vec.html">Vec</a>&lt;u8, H&gt;) -> <a href="./lrs::string::CString.html">CString</a>&lt;H&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>bytes</td><td><p>The vector to be wrapped.</p></td><tr></tbody></table><h2>Remarks</h2><p>If the vector doesn't have exactly one null byte as its last entry, the behavior is undefined.</p></body></html>

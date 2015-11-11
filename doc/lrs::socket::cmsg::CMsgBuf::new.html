@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::socket::cmsg::CMsgBuf::new</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::socket.html">socket</a>::<a href="./lrs::socket::cmsg.html">cmsg</a>::<a href="./lrs::socket::cmsg::CMsgBuf.html">CMsgBuf</a>::<a href="./lrs::socket::cmsg::CMsgBuf::new.html">new</a></h1><p>Creates a new <code>CMsgBuf</code> backed by allocated memory.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::socket::cmsg::CMsgBuf.html">CMsgBuf</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: Default,
+{
+    fn new() -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::socket::cmsg::CMsgBuf.html">CMsgBuf</a>&lt;H&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Return value</h2><p>Returns an allocated <code>CMsgBuf</code>.</p><h2>Remarks</h2><p>The buffer will be resized dynamically. This constructor fails if no memory can be allocated.</p></body></html>

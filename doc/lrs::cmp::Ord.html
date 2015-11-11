@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::cmp::Ord</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::cmp.html">cmp</a>::<a href="./lrs::cmp::Ord.html">Ord</a></h1><p>Objects that are part of a total order.</p><h2>Syntax</h2><pre>trait Ord&lt;Rhs = Self&gt; : <a href="./lrs::ops::PartialOrd.html">PartialOrd</a>&lt;Rhs&gt;
+    where Rhs: ?<a href="./lrs::marker::Sized.html">Sized</a>,
+{
+    /* Required methods */
+    fn cmp(&self, other: &amp;Rhs) -> <a href="./lrs::cmp::Ordering.html">Ordering</a>
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::cmp::Ord::cmp.html">cmp</a></td><td><p>Compares two objects.</p></td></tr></tbody></table><h2>Remarks</h2><p>This is different from <a href="./lrs::cmp::PartialOrd.html">PartialOrd</a> in that two elements can always be ordered: They are either equal or one is smaller than the other.</p><p>Since <code>Ord&lt;Rhs&gt;: PartialOrd&lt;Rhs&gt;</code>, it is recommended for <code>PartialOrd</code> to be implemented in terms of <code>Ord</code>:</p><pre>impl PartialOrd&lt;T&gt; for U {
+    fn partial_cmp(&amp;self, other: &amp;T) -&gt; Option&lt;Ordering&gt; {
+        Some(self.cmp(other))
+    }
+}</pre><p>Note that this is merely a library trait and does not influence the comparison operators <code>&lt;</code>, <code>&lt;=</code>, etc. which always use the <code>PartialOrd</code> implementation.</p><p>Note that you are not forced to implement this trait reflexively or transitively which is, in general, impossible due to coherence rules imposed by the compiler.</p><h2>Examples</h2><p>Integers, strings, etc.</p><h2>See also</h2><ul><li><p><a href="./lrs::cmp::PartialOrd.html">PartialOrd</a></p></li><li><p><a href="http://en.wikipedia.org/wiki/Total_order">http://en.wikipedia.org/wiki/Total_order</a></p></li></ul></body></html>

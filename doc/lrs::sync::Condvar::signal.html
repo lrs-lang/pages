@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::sync::Condvar::signal</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::sync.html">sync</a>::<a href="./lrs::sync::Condvar.html">Condvar</a>::<a href="./lrs::sync::Condvar::signal.html">signal</a></h1><p>Wakes a number of threads waiting on this condvar.</p><h2>Syntax</h2><pre>impl <a href="./lrs::sync::Condvar.html">Condvar</a> {
+    fn signal(&self, n: usize) -> ()
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>n</td><td><p>The number of threads to be woken.</p></td><tr></tbody></table><h2>Remarks</h2><p>It's possible that fewer than <code>n</code> threads are woken because fewer than <code>n</code> threads are currently waiting on this condvar.</p></body></html>

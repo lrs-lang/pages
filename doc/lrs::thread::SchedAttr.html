@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::thread::SchedAttr</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::thread.html">thread</a>::<a href="./lrs::thread::SchedAttr.html">SchedAttr</a></h1><p>Scheduler attributes.</p><h2>Syntax</h2><pre>struct SchedAttr {
+    scheduler: <a href="./lrs::thread::Scheduler.html">Scheduler</a>,
+    flags: <a href="./lrs::thread::SchedFlags.html">SchedFlags</a>,
+    nice: u8,
+    priority: u8,
+    runtime: u64,
+    deadline: u64,
+    period: u64,
+}</pre><h2>Fields</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>scheduler</td><td><p>The scheduler itself.</p></td></tr><tr><td>flags</td><td><p>Flags that modify the scheduler behavior.</p></td></tr><tr><td>nice</td><td><p>The nice value of the thread.</p></td></tr><tr><td>priority</td><td><p>The static priority of the thread.</p></td></tr><tr><td>runtime</td><td><p>The runtime attribute of the Deadline scheduler.</p></td></tr><tr><td>deadline</td><td><p>The deadline attribute of the Deadline scheduler.</p></td></tr><tr><td>period</td><td><p>The period attribute of the Deadline scheduler.</p></td></tr></tbody></table><h2>See also</h2><ul><li><p><a href="http://man7.org/linux/man-pages/man2/sched_setattr.2.html">sched_setattr(2)</a></p></li></ul></body></html>

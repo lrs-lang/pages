@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::num::W8::saturating_add</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::num.html">num</a>::<a href="./lrs::num::W8.html">W8</a>::<a href="./lrs::num::W8::saturating_add.html">saturating_add</a></h1><p>Adds another integer to this one without overflow, trimming the value to the range that can be represented in this type.</p><h2>Syntax</h2><pre>impl <a href="./lrs::num::W8.html">W8</a> {
+    fn saturating_add(self, other: u8) -> <a href="./lrs::num::W8.html">W8</a>
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>other</td><td></td><tr></tbody></table><h2>Examples</h2><pre>let x: u8 = 200;
+let y: u8 = 100;
+assert!(x.saturating_add(y) == 255);</pre></body></html>

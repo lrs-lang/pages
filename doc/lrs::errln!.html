@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Macro lrs::errln!</title></head><body><h1>Macro <a href="./lrs.html">lrs</a>::<a href="./lrs::errln!.html">errln!</a></h1><p>Like <code>println</code> but write to stder.</p><h2>Syntax</h2><pre>( $ fmt : expr ) => {
+write ! ( :: std:: fd:: STDERR , concat ! ( $ fmt , "\n" ) ) } ; (
+$ fmt : expr , $ ( $ arg : tt ) * ) => {
+write ! ( :: std:: fd:: STDERR , concat ! ( $ fmt , "\n" ) , $ ( $ arg ) * ) }
+;</pre></body></html>

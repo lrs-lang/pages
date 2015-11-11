@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Macro lrs::vec!</title></head><body><h1>Macro <a href="./lrs.html">lrs</a>::<a href="./lrs::vec!.html">vec!</a></h1><p>Creates a vector out of the arguments.</p><h2>Syntax</h2><pre>( $ elem : expr ; $ n : expr ) => {
+:: std:: vec:: Vec:: from_elem ( $ elem , $ n ) } ; ( $ ( $ x : expr ) , * )
+=> {
+{
+let base = [ $ ( $ x ) , * ] ; let mut vec = :: std:: vec:: Vec::
+with_capacity ( base . len (  ) ) . unwrap (  ) ; unsafe {
+vec . try_unsafe_push_all ( & base [ .. ] ) . unwrap (  ) ; :: std:: mem::
+unsafe_forget ( base ) ; } vec } } ; ( $ ( $ x : expr , ) * ) => {
+vec ! ( $ ( $ x ) , * ) } ;</pre></body></html>

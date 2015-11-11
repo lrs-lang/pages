@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::clone::MaybeClone</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::clone.html">clone</a>::<a href="./lrs::clone::MaybeClone.html">MaybeClone</a></h1><p>Objects that can be duplicated.</p><h2>Syntax</h2><pre>trait MaybeClone {
+    /* Required methods */
+    fn maybe_clone(&self) -> <a href="./lrs::result::Result.html">Result</a>&lt;Self, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::clone::MaybeClone::maybe_clone.html">maybe_clone</a></td><td><p>Clones the value.</p></td></tr></tbody></table><h2>Remarks</h2><p>Duplication might not succeed (e.g. out of memory) in which case an error is returned.</p></body></html>

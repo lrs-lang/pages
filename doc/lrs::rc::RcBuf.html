@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::rc::RcBuf</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::rc.html">rc</a>::<a href="./lrs::rc::RcBuf.html">RcBuf</a></h1><p>A buffer used when creating a new <code>Rc</code>.</p><h2>Syntax</h2><pre>struct RcBuf&lt;T, Heap = <a href="./lrs::alloc::Libc.html">Libc</a>&gt;
+    where Heap: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          T: <a href="./lrs::marker::Leak.html">Leak</a>,
+{
+    /* private fields */
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">self</code></td><td><a href="./lrs::rc::RcBuf::set.html">set</a></td><td><p>Stores a value in the buffer, creating a real <code>Rc</code>.</p></td></tr></tbody></table><h2>Trait implementations</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::rc::RcBuf::Drop.html">Drop</a></td><td><p>Objects with a destructor.</p></td></tr><tr><td><a href="./lrs::rc::RcBuf::Send.html">Send</a></td><td><p>Objects whose ownership can be moved from one thread to another.</p></td></tr><tr><td><a href="./lrs::rc::RcBuf::Sync.html">Sync</a></td><td><p>Objects that allow immutable access from threads other than their owning thread.</p></td></tr></tbody></table></body></html>

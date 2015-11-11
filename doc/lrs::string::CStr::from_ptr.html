@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::string::CStr::from_ptr</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::string.html">string</a>::<a href="./lrs::string::CStr.html">CStr</a>::<a href="./lrs::string::CStr::from_ptr.html">from_ptr</a></h1><p>Creates a new <code>CStr</code> from a pointer.</p><h2>Syntax</h2><pre>impl <a href="./lrs::string::CStr.html">CStr</a> {
+    unsafe fn from_ptr(ptr: *const i8) -> &amp;'static <a href="./lrs::string::CStr.html">CStr</a>
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>ptr</td><td><p>A pointer to a null-terminated string.</p></td><tr></tbody></table><h2>Remarks</h2><p>If <code>ptr</code> is not a null terminated array of bytes, the behavior is undefined.</p></body></html>

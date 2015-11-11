@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::sync::Queue::new</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::sync.html">sync</a>::<a href="./lrs::sync::Queue.html">Queue</a>::<a href="./lrs::sync::Queue::new.html">new</a></h1><p>Creates a new queue with allocated memory.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::sync::Queue.html">Queue</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: Default,
+{
+    fn new(cap: usize) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::sync::Queue.html">Queue</a>&lt;T, H&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>cap</td><td><p>The number of elements that can be stored in the queue.</p></td><tr></tbody></table><h2>Remarks</h2><p>The capacity will be increased to the next power of two.</p></body></html>

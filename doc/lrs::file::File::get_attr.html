@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::file::File::get_attr</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::file.html">file</a>::<a href="./lrs::file::File.html">File</a>::<a href="./lrs::file::File::get_attr.html">get_attr</a></h1><p>Gets an attribute of this file.</p><h2>Syntax</h2><pre>impl <a href="./lrs::file::File.html">File</a> {
+    fn get_attr&lt;S&gt;(&self, name: S) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::vec::Vec.html">Vec</a>&lt;u8, <a href="./lrs::alloc::Libc.html">Libc</a>&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where S: <a href="./lrs::string::ToCString.html">ToCString</a>,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td><p>The name of the attribute.</p></td><tr></tbody></table><h2>Return value</h2><p>Returns the value of the argument.</p><h2>See also</h2><ul><li><p><a href="http://man7.org/linux/man-pages/man2/fgetxattr.2.html">fgetxattr(2)</a></p></li></ul></body></html>

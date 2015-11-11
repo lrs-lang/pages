@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::rc::ArcBuf::set</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::rc.html">rc</a>::<a href="./lrs::rc::ArcBuf.html">ArcBuf</a>::<a href="./lrs::rc::ArcBuf::set.html">set</a></h1><p>Stores a value in the buffer, creating a real <code>Arc</code>.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::rc::ArcBuf.html">ArcBuf</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+          T: <a href="./lrs::marker::Leak.html">Leak</a>,
+{
+    fn set(self, val: T) -> <a href="./lrs::rc::Arc.html">Arc</a>&lt;T, H&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>val</td><td><p>The value to be stored in the buffer.</p></td><tr></tbody></table></body></html>

@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::hashmap::VacantEntry</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::hashmap.html">hashmap</a>::<a href="./lrs::hashmap::VacantEntry.html">VacantEntry</a></h1><p>An empty bucket in a hash map.</p><h2>Syntax</h2><pre>struct VacantEntry&lt;'a, Key, Value, Bucket&gt;
+    where Bucket: Bucket&lt;Key, Value&gt; + 'a,
+          Key: <a href="./lrs::ops::Eq.html">Eq</a>&lt;Key&gt; + <a href="./lrs::hash::Hash.html">Hash</a>,
+{
+    /* private fields */
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">self</code></td><td><a href="./lrs::hashmap::VacantEntry::set.html">set</a></td><td><p>Sets the content of the empty bucket.</p></td></tr></tbody></table></body></html>

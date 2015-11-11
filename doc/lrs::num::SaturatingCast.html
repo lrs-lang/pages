@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::num::SaturatingCast</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::num.html">num</a>::<a href="./lrs::num::SaturatingCast.html">SaturatingCast</a></h1><p>Objects that can be cast to another object in a saturating way.</p><h2>Syntax</h2><pre>trait SaturatingCast&lt;T&gt; {
+    /* Required methods */
+    fn saturating_cast(self) -> T
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">self</code></td><td><a href="./lrs::num::SaturatingCast::saturating_cast.html">saturating_cast</a></td><td></td></tr></tbody></table><h2>Remarks</h2><p>This is used to cast between integer type so that <code>256.saturating_cast():u8 == 255</code>.</p></body></html>

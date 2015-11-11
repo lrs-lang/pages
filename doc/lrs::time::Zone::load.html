@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::time::Zone::load</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::time.html">time</a>::<a href="./lrs::time::Zone.html">Zone</a>::<a href="./lrs::time::Zone::load.html">load</a></h1><p>Loads a time zone from a well known name.</p><h2>Syntax</h2><pre>impl <a href="./lrs::time::Zone.html">Zone</a> {
+    fn load&lt;S&gt;(zone: S) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::time::Zone.html">Zone</a>, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where S: <a href="./lrs::string::AsNoNullStr.html">AsNoNullStr</a>,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>zone</td><td><p>The name of the zone.</p></td><tr></tbody></table><h2>Remarks</h2><p>For example: "Europe/Berlin", "Asia/Tokyo". The full list of name can be found on wikipedia.</p></body></html>

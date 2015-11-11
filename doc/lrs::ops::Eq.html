@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::ops::Eq</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::ops.html">ops</a>::<a href="./lrs::ops::Eq.html">Eq</a></h1><p>Objects that implement the binary <code>==</code> and <code>!=</code> operators.</p><h2>Syntax</h2><pre>trait Eq&lt;Rhs = Self&gt;
+    where Rhs: ?<a href="./lrs::marker::Sized.html">Sized</a>,
+{
+    /* Required methods */
+    fn eq(&self, other: &amp;Rhs) -> bool
+
+    /* Provided methods */
+    fn ne(&self, other: &amp;Rhs) -> bool
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::ops::Eq::eq.html">eq</a></td><td><p>The method that will be called by the <code>==</code> operator.</p></td></tr><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::ops::Eq::ne.html">ne</a></td><td><p>The method that will be called by the <code>==</code> operator.</p></td></tr></tbody></table></body></html>

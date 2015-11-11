@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::prelude::v1::ToOwned</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::prelude.html">prelude</a>::<a href="./lrs::prelude::v1.html">v1</a>::<a href="./lrs::prelude::v1::ToOwned.html">ToOwned</a></h1><p>Objects that can be converted into an owned version.</p><h2>Syntax</h2><pre>trait ToOwned&lt;H = <a href="./lrs::alloc::Libc.html">Libc</a>&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    type Owned;
+
+    /* Required methods */
+    fn to_owned_with_pool(&self, pool: &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool) -> <a href="./lrs::result::Result.html">Result</a>&lt;&lt;Self as <a href="./lrs::prelude::v1::ToOwned.html">ToOwned</a>&lt;H&gt;&gt;::Owned, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+
+    /* Provided methods */
+    fn to_owned(&self) -> <a href="./lrs::result::Result.html">Result</a>&lt;&lt;Self as <a href="./lrs::prelude::v1::ToOwned.html">ToOwned</a>&lt;H&gt;&gt;::Owned, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: Default,
+}</pre><h2>Associated types</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Owned</td><td><p>The type of the owned version.</p></td></tr></tbody></table><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::prelude::v1::ToOwned::to_owned.html">to_owned</a></td><td><p>Converts the object into its owned version.</p></td></tr><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::prelude::v1::ToOwned::to_owned_with_pool.html">to_owned_with_pool</a></td><td><p>Converts the object into its owned version.</p></td></tr></tbody></table></body></html>

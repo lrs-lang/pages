@@ -1,0 +1,52 @@
+body {
+    font-size: 14px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fafafa;
+}
+
+a {
+    text-decoration: none;
+    color: #229;
+    font-weight: bold;
+}
+
+table, th, td {
+    border: 2px solid #BBB;
+    border-collapse: collapse;
+}
+
+table {
+    font-size: inherit;
+}
+
+th, td {
+    padding: 10px 7px;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #EEE;
+    color: #333;
+    text-align: left;
+}
+
+pre {
+    border: 1px solid #BBB;
+    padding: 7px 10px;
+    background-color: #F8F8F8;
+    overflow: auto;
+    display: inline-block;
+    margin: 0px;
+}
+
+code {
+    color: #700;
+}
+
+.no_break {
+    White-space: nowrap;
+}

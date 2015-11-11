@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Module lrs::time</title></head><body><h1>Module <a href="./lrs.html">lrs</a>::<a href="./lrs::time.html">time</a></h1><p>Time handling.</p><h2>Description</h2><p>This module provides methods for time handling. The essential types are</p><ul><li><p><code>Time</code> - An offset from an unspecified point in time,</p></li><li><p><code>DateTime</code> - A time represented in a human-readable format,</p></li><li><p><code>Zone</code> - A timezone,</p></li><li><p><code>Clock</code> - A clock that can be used to measure time.</p></li><li><p><code>Timer</code> - A timer.</p></li></ul><h2>Types</h2><table><thead><tr><th>Kind</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td class="struct_hl">Struct</td>
+                    <td><a href="./lrs::time::Clock.html">Clock</a></td><td><p>A clock that can be used to measure time.</p></td></tr><tr><td class="struct_hl">Struct</td>
+                    <td><a href="./lrs::time::DateTime.html">DateTime</a></td><td><p>An expanded date.</p></td></tr><tr><td class="struct_hl">Struct</td>
+                    <td><a href="./lrs::time::Time.html">Time</a></td><td><p>A time offset.</p></td></tr><tr><td class="struct_hl">Struct</td>
+                    <td><a href="./lrs::time::Timer.html">Timer</a></td><td><p>A timer.</p></td></tr><tr><td class="enum_hl">Enum</td>
+                    <td><a href="./lrs::time::Weekday.html">Weekday</a></td><td><p>A weekday.</p></td></tr><tr><td class="struct_hl">Struct</td>
+                    <td><a href="./lrs::time::Zone.html">Zone</a></td><td><p>A time zone.</p></td></tr></tbody></table><h2>Constants</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::time::BOOT.html">BOOT</a></td><td><p>A monotonic clock since some arbitrary point in the past which isn't affected by time jumps and continues to run while the system is suspended.</p></td></tr><tr><td><a href="./lrs::time::MONO.html">MONO</a></td><td><p>A monotonic clock since some arbitrary point in the past which isn't affected by time jumps.</p></td></tr><tr><td><a href="./lrs::time::MONO_COARSE.html">MONO_COARSE</a></td><td><p>A coarse monotonic clock since some arbitrary point in the past which isn't affected by time jumps.</p></td></tr><tr><td><a href="./lrs::time::MONO_RAW.html">MONO_RAW</a></td><td><p>A monotonic clock since some arbitrary point in the past which isn't affected by time jumps or time adjustments.</p></td></tr><tr><td><a href="./lrs::time::PROCESS.html">PROCESS</a></td><td><p>A clock that measures the CPU time used by this process.</p></td></tr><tr><td><a href="./lrs::time::REAL.html">REAL</a></td><td><p>Real ("wall time") clock that measures the time since 1970-01-01T00:00:00+00:00.</p></td></tr><tr><td><a href="./lrs::time::REAL_COARSE.html">REAL_COARSE</a></td><td><p>Real coarse ("wall time") clock that measures the time since 1970-01-01T00:00:00+00:00.</p></td></tr><tr><td><a href="./lrs::time::THREAD.html">THREAD</a></td><td><p>A clock that measures the CPU time used by this thread.</p></td></tr></tbody></table><h2>Examples</h2><p>The following example prints the current time in the local timezone to stdout:</p><pre>use lrs::{time};
+
+let now = time::Real::get_time().unwrap();
+let local = time::Zone::local().unwrap();
+let expanded = local.expand(now);
+
+println!("It is {:02}:{:02}:{:02}", expanded.hour, expanded.minute, expanded.second);
+
+// Example output:
+// It is 13:06:27</pre><p>The next example prints the last time the current time zone was changed when viewed from Tokyo:</p><pre>use lrs::{file, time};
+
+let info = file::info_no_follow("/etc/localtime").unwrap();
+let last_mod = info.last_modification();
+let tokyo = time::Zone::load("Asia/Tokyo").unwrap();
+let expanded = tokyo.expand(last_mod);
+
+println!("{:?}", expanded);
+
+// Example output:
+// 2013-08-06T07:06:55+09:00</pre><p>The next example creates a timer that starts ticking after five seconds every second, sleeps for ten seconds, and then prints the number of times the timer expired.</p><pre>use lrs::time::{self, Time};
+
+let timer = time::Real.timer().unwrap();
+timer.interval_in(Time::seconds(1), Time::seconds(5)).unwrap();
+
+time::Real.sleep_for(Time::seconds(10)).unwrap();
+
+println!("{:?}", timer.ticks().unwrap());
+
+// Example output:
+// 6</pre></body></html>

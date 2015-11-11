@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait implementation lrs::sync::Queue::Send</title></head><body><h1>Trait implementation <a href="./lrs.html">lrs</a>::<a href="./lrs::sync.html">sync</a>::<a href="./lrs::sync::Queue.html">Queue</a>::<a href="./lrs::sync::Queue::Send.html">Send</a></h1><p>Objects whose ownership can be moved from one thread to another.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::marker::Send.html">Send</a> for <a href="./lrs::sync::Queue.html">Queue</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a> + <a href="./lrs::marker::Send.html">Send</a>,
+          T: <a href="./lrs::marker::Send.html">Send</a>,</pre></body></html>

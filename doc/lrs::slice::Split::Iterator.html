@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait implementation lrs::slice::Split::Iterator</title></head><body><h1>Trait implementation <a href="./lrs.html">lrs</a>::<a href="./lrs::slice.html">slice</a>::<a href="./lrs::slice::Split.html">Split</a>::<a href="./lrs::slice::Split::Iterator.html">Iterator</a></h1><p>Objects that can be iterated over.</p><h2>Syntax</h2><pre>impl&lt;'a, T, F&gt; <a href="./lrs::iter::Iterator.html">Iterator</a> for <a href="./lrs::slice::Split.html">Split</a>&lt;'a, T, F&gt;
+    where F: <a href="./lrs::ops::FnMut.html">FnMut</a>(&amp;T) -> bool,
+{
+    type Item = &amp;'a [T];
+}</pre></body></html>

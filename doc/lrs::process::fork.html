@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Function lrs::process::fork</title></head><body><h1>Function <a href="./lrs.html">lrs</a>::<a href="./lrs::process.html">process</a>::<a href="./lrs::process::fork.html">fork</a></h1><p>Forks the process and executes a function in the child process.</p><h2>Syntax</h2><pre>fn fork&lt;F&gt;(f: F) -> <a href="./lrs::result::Result.html">Result</a>&lt;i32, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+    where F: <a href="./lrs::ops::FnOnce.html">FnOnce</a>() -> (),</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>f</td><td><p>The function that will be executed in the child process.</p></td><tr></tbody></table><h2>Return value</h2><p>Returns the process id of the child process.</p><h2>Remarks</h2><p>The function <code>f</code> will only be executed in the child process. When the function returns, the child process automatically exits with exit code <code>0</code>.</p><h2>Examples</h2><pre>let res = fork(|| println!("I'm in the child process"));
+match res {
+    Some(n) =&gt; println!("Executed the child process: {}", n),
+    Err(e) =&gt; println!("Could not execute the child process: {:?}", e),
+}</pre><h2>See also</h2><ul><li><p><a href="http://man7.org/linux/man-pages/man2/fork.2.html">fork(2)</a></p></li></ul></body></html>

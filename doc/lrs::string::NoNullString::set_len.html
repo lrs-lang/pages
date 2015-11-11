@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::string::NoNullString::set_len</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::string.html">string</a>::<a href="./lrs::string::NoNullString.html">NoNullString</a>::<a href="./lrs::string::NoNullString::set_len.html">set_len</a></h1><p>Truncates the string to a certain size that can be greater than the current size.</p><h2>Syntax</h2><pre>impl&lt;H&gt; <a href="./lrs::string::NoNullString.html">NoNullString</a>&lt;H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    unsafe fn set_len(&mut self, size: usize) -> ()
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>size</td><td><p>The new length of the string.</p></td><tr></tbody></table><h2>Remarks</h2><p>If the new range of the string contains null bytes, the behavior is undefined.</p></body></html>

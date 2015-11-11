@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::share::Cell</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::share.html">share</a>::<a href="./lrs::share::Cell.html">Cell</a></h1><p>A container with interior mutability.</p><h2>Syntax</h2><pre>struct Cell&lt;T&gt; {
+    data: T,
+}</pre><h2>Fields</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>data</td><td><p>The data contained in the cell.</p></td></tr></tbody></table><h2>Static methods</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::share::Cell::new.html">new</a></td><td><p>Creates a new cell.</p></td></tr></tbody></table><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::share::Cell::ptr.html">ptr</a></td><td><p>Returns a mutable pointer to the data.</p></td></tr></tbody></table><h2>Trait implementations</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::share::Cell::Copy.html">Copy</a></td><td><p>Objects that can safely be copied via <code>memcpy</code>.</p></td></tr><tr><td><a href="./lrs::share::Cell::Sync.html">Sync</a></td><td><p>Objects that allow immutable access from threads other than their owning thread.</p></td></tr></tbody></table><h2>Remarks</h2><p>Modifying data through immutable <code>&amp;</code> references is undefined behavior unless the data is (recursively) contained in a <code>Cell</code>.</p><p>This type is not <code>Sync</code> because race conditions are undefined behavior. It should rarely be used directly except to build more robust structures with interior mutability such as <code>CopyCell</code>.</p><h2>Examples</h2><pre>struct X {
+    val: Cell&lt;i32&gt;,
+}
+
+impl X {
+    fn modify(&amp;self, new: i32) {
+        unsafe { *self.val.ptr() = new; }
+    }
+}</pre></body></html>

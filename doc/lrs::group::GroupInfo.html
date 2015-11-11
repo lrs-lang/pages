@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::group::GroupInfo</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::group.html">group</a>::<a href="./lrs::group::GroupInfo.html">GroupInfo</a></h1><p>Trait for types that hold group info.</p><h2>Syntax</h2><pre>trait GroupInfo&lt;'a&gt;
+    where &lt;&lt;Self as <a href="./lrs::group::GroupInfo.html">GroupInfo</a>&lt;'a&gt;&gt;::Iterator as <a href="./lrs::iter::Iterator.html">Iterator</a>&gt;::Item = &amp;'a <a href="./lrs::string::ByteStr.html">ByteStr</a>,
+{
+    type Iterator: <a href="./lrs::iter::Iterator.html">Iterator</a>;
+
+    /* Required methods */
+    fn id(&self) -> u32
+    fn members(&'a self) -> &lt;Self as <a href="./lrs::group::GroupInfo.html">GroupInfo</a>&lt;'a&gt;&gt;::Iterator
+    fn name(&self) -> &amp;<a href="./lrs::string::ByteStr.html">ByteStr</a>
+    fn password(&self) -> &amp;<a href="./lrs::string::ByteStr.html">ByteStr</a>
+}</pre><h2>Associated types</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Iterator</td><td></td></tr></tbody></table><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::group::GroupInfo::id.html">id</a></td><td><p>Returns the id of the group.</p></td></tr><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::group::GroupInfo::members.html">members</a></td><td><p>Returns an iterator over the members of the group.</p></td></tr><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::group::GroupInfo::name.html">name</a></td><td><p>Returns the name of the group.</p></td></tr><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::group::GroupInfo::password.html">password</a></td><td><p>Returns the password of the group.</p></td></tr></tbody></table></body></html>

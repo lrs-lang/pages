@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::vec::Vec::push_all</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::vec.html">vec</a>::<a href="./lrs::vec::Vec.html">Vec</a>::<a href="./lrs::vec::Vec::push_all.html">push_all</a></h1><p>Appends a slice of copyable elements to the vector.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::vec::Vec.html">Vec</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn push_all(&mut self, vals: &amp;[T]) -> <a href="./lrs::result::Result.html">Result</a>&lt;(), <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where T: <a href="./lrs::marker::Copy.html">Copy</a>,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>vals</td><td><p>The elements to append.</p></td><tr></tbody></table><h2>Remarks</h2><p>If this operation fails, no elements have been appended.</p></body></html>

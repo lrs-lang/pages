@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Struct lrs::hashmap::OccupiedEntry</title></head><body><h1>Struct <a href="./lrs.html">lrs</a>::<a href="./lrs::hashmap.html">hashmap</a>::<a href="./lrs::hashmap::OccupiedEntry.html">OccupiedEntry</a></h1><p>A non-empty bucket.</p><h2>Syntax</h2><pre>struct OccupiedEntry&lt;'a, Key, Value, Bucket&gt;
+    where Bucket: Bucket&lt;Key, Value&gt; + 'a,
+          Key: <a href="./lrs::ops::Eq.html">Eq</a>&lt;Key&gt; + <a href="./lrs::hash::Hash.html">Hash</a>,
+{
+    /* private fields */
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">self</code></td><td><a href="./lrs::hashmap::OccupiedEntry::into_mut.html">into_mut</a></td><td><p>Returns the contained mutable reference to the stored value.</p></td></tr><tr><td><code class="no_break">self</code></td><td><a href="./lrs::hashmap::OccupiedEntry::remove.html">remove</a></td><td><p>Removes the contained value and key.</p></td></tr></tbody></table><h2>Trait implementations</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::hashmap::OccupiedEntry::Deref.html">Deref</a></td><td><p>Objects that implement the immutable dereference operator.</p></td></tr><tr><td><a href="./lrs::hashmap::OccupiedEntry::DerefMut.html">DerefMut</a></td><td><p>Objects that implement the mutable dereference operator.</p></td></tr></tbody></table></body></html>

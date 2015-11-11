@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::num::W32::from_be</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::num.html">num</a>::<a href="./lrs::num::W32.html">W32</a>::<a href="./lrs::num::W32::from_be.html">from_be</a></h1><p>Interprets this integer as a value in big-endian representation and returns the value in host-endian representation.</p><h2>Syntax</h2><pre>impl <a href="./lrs::num::W32.html">W32</a> {
+    fn from_be(self) -> <a href="./lrs::num::W32.html">W32</a>
+}</pre><h2>Examples</h2><p>This example shows the behavior on a little-endian machine.</p><pre>let x: u16 = 0x0100;
+assert!(x.from_be() == 1);</pre></body></html>

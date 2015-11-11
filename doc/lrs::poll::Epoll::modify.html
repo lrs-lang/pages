@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::poll::Epoll::modify</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::poll.html">poll</a>::<a href="./lrs::poll::Epoll.html">Epoll</a>::<a href="./lrs::poll::Epoll::modify.html">modify</a></h1><p>Modifies the flags associated with an added file descriptor.</p><h2>Syntax</h2><pre>impl <a href="./lrs::poll::Epoll.html">Epoll</a> {
+    fn modify&lt;T&gt;(&self, fd: &amp;T, flags: <a href="./lrs::poll::PollFlags.html">PollFlags</a>) -> <a href="./lrs::result::Result.html">Result</a>&lt;(), <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where T: <a href="./lrs::fd::FDContainer.html">FDContainer</a>,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>fd</td><td><p>The file descriptor to modify.</p></td><tr><tr><td>flags</td><td><p>The new flags.</p></td><tr></tbody></table></body></html>

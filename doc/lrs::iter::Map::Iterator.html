@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait implementation lrs::iter::Map::Iterator</title></head><body><h1>Trait implementation <a href="./lrs.html">lrs</a>::<a href="./lrs::iter.html">iter</a>::<a href="./lrs::iter::Map.html">Map</a>::<a href="./lrs::iter::Map::Iterator.html">Iterator</a></h1><p>Objects that can be iterated over.</p><h2>Syntax</h2><pre>impl&lt;T, F, I&gt; <a href="./lrs::iter::Iterator.html">Iterator</a> for <a href="./lrs::iter::Map.html">Map</a>&lt;T, F, I&gt;
+    where I: <a href="./lrs::iter::Iterator.html">Iterator</a>,
+          F: <a href="./lrs::ops::FnMut.html">FnMut</a>(&lt;I as <a href="./lrs::iter::Iterator.html">Iterator</a>&gt;::Item) -> T,
+{
+    type Item = T;
+}</pre></body></html>

@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::vec::Vec::set_len</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::vec.html">vec</a>::<a href="./lrs::vec::Vec.html">Vec</a>::<a href="./lrs::vec::Vec::set_len.html">set_len</a></h1><p>Sets the length of the vector.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::vec::Vec.html">Vec</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    unsafe fn set_len(&mut self, len: usize) -> ()
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>len</td><td><p>The new length of the vector.</p></td><tr></tbody></table><h2>Remarks</h2><p>If len is greater than the current capacity of the vector, the process is aborted.</p></body></html>

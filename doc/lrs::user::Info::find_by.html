@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::user::Info::find_by</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::user.html">user</a>::<a href="./lrs::user::Info.html">Info</a>::<a href="./lrs::user::Info::find_by.html">find_by</a></h1><p>Finds the first user that satisfies a predicate.</p><h2>Syntax</h2><pre>impl&lt;'a&gt; <a href="./lrs::user::Info.html">Info</a>&lt;'a&gt; {
+    fn find_by&lt;F&gt;(buf: &amp;'a mut [u8], pred: F) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::user::Info.html">Info</a>&lt;'a&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where F: <a href="./lrs::ops::Fn.html">Fn</a>(&amp;<a href="./lrs::user::Info.html">Info</a>) -> bool,
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>buf</td><td><p>The buffer in which the information will be stored.</p></td><tr><tr><td>pred</td><td><p>The predicate.</p></td><tr></tbody></table></body></html>

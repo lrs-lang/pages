@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::prelude::v1::BufWrite</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::prelude.html">prelude</a>::<a href="./lrs::prelude::v1.html">v1</a>::<a href="./lrs::prelude::v1::BufWrite.html">BufWrite</a></h1><p>Objects that wrap a byte-stream for writing and contain a buffer.</p><h2>Syntax</h2><pre>trait BufWrite : <a href="./lrs::fmt::Write.html">Write</a> {
+    /* Required methods */
+    fn read_to_eof&lt;R&gt;(&mut self, r: R) -> <a href="./lrs::result::Result.html">Result</a>&lt;usize, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where R: <a href="./lrs::io::Read.html">Read</a>,
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::prelude::v1::BufWrite::read_to_eof.html">read_to_eof</a></td><td><p>Reads bytes from a <code>Read</code> object and writes them to the stream until end-of-file.</p></td></tr></tbody></table></body></html>

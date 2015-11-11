@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::string::ToCString</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::string.html">string</a>::<a href="./lrs::string::ToCString.html">ToCString</a></h1><p>Objects that can be turned into a <code>CString</code> by allocating.</p><h2>Syntax</h2><pre>trait ToCString {
+    /* Required methods */
+    fn to_cstring&lt;H&gt;(&self) -> <a href="./lrs::result::Result.html">Result</a>&lt;<a href="./lrs::string::CString.html">CString</a>&lt;H&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+              &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: Default,
+
+    /* Provided methods */
+    fn rmo_cstr&lt;H&gt;(&'a self, _buf: &amp;'a mut [u8]) -> <a href="./lrs::result::Result.html">Result</a>&lt;Rmo&lt;'a, <a href="./lrs::string::CStr.html">CStr</a>, H&gt;, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+        where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+              &lt;H as <a href="./lrs::alloc::Allocator.html">Allocator</a>&gt;::Pool: Default,
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::string::ToCString::rmo_cstr.html">rmo_cstr</a></td><td><p>Tries to convert the object into an <code>Rmo&lt;CStr&gt;</code> with or without allocating.</p></td></tr><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::string::ToCString::to_cstring.html">to_cstring</a></td><td><p>Converts the object into an allocated <code>CString</code>.</p></td></tr></tbody></table></body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::getopt::Getopt::used</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::getopt.html">getopt</a>::<a href="./lrs::getopt::Getopt.html">Getopt</a>::<a href="./lrs::getopt::Getopt::used.html">used</a></h1><p>Returns the number of arguments used before parsing was stopped.</p><h2>Syntax</h2><pre>impl&lt;'a, I&gt; <a href="./lrs::getopt::Getopt.html">Getopt</a>&lt;'a, I&gt;
+    where I: <a href="./lrs::iter::Iterator.html">Iterator</a>&lt;Item = &amp;'static <a href="./lrs::string::CStr.html">CStr</a>&gt;,
+{
+    fn used(&self) -> usize
+}</pre><h2>Remarks</h2><p>This can be used when parsing arguments that contain trailing data, e.g.,</p><pre>Usage: my_program [OPTIONS]* file_name</pre><h2>Examples</h2><pre>let mut args = env::args();
+args.next(); // skip program name
+
+let mut getopts = Getopt::new(args, &amp;[]);
+for (arg, param) in &amp;mut getopts {
+    // ...
+}
+
+// Add 1 to getopts.used() because we have to skip the program name
+println!("file_name: {:?}", env::args().consume(1+getopts.used()).next());</pre><p>Note that both of the following invocations will print the correct file name:</p><pre>my_program my_file
+my_program -- my_file</pre><p>Prints</p><pre>file_name: "my_file"
+file_name: "my_file"</pre></body></html>

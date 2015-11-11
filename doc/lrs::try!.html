@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Macro lrs::try!</title></head><body><h1>Macro <a href="./lrs.html">lrs</a>::<a href="./lrs::try!.html">try!</a></h1><p>Unwraps the <code>Ok</code> branch of a <code>Result</code> and returns the error from the calling function otherwise.</p><h2>Syntax</h2><pre>( $ val : expr ) => {
+match $ val {
+:: std:: result:: Result:: Ok ( v ) => v , :: std:: result:: Result:: Err ( e
+) => return :: std:: result:: Result:: Err ( e ) , } }</pre></body></html>

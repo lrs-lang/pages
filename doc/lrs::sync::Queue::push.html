@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::sync::Queue::push</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::sync.html">sync</a>::<a href="./lrs::sync::Queue.html">Queue</a>::<a href="./lrs::sync::Queue::push.html">push</a></h1><p>Tries to add an element to the queue.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::sync::Queue.html">Queue</a>&lt;T, H&gt;
+    where H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    fn push(&self, val: T) -> <a href="./lrs::option::Option.html">Option</a>&lt;T&gt;
+}</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>val</td><td><p>The element to be added.</p></td><tr></tbody></table><h2>Return value</h2><p>Returns the element if the queue is full.</p></body></html>

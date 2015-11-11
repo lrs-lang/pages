@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Method lrs::hashmap::OccupiedEntry::into_mut</title></head><body><h1>Method <a href="./lrs.html">lrs</a>::<a href="./lrs::hashmap.html">hashmap</a>::<a href="./lrs::hashmap::OccupiedEntry.html">OccupiedEntry</a>::<a href="./lrs::hashmap::OccupiedEntry::into_mut.html">into_mut</a></h1><p>Returns the contained mutable reference to the stored value.</p><h2>Syntax</h2><pre>impl&lt;'a, Key, Value, Bucket&gt; <a href="./lrs::hashmap::OccupiedEntry.html">OccupiedEntry</a>&lt;'a, Key, Value, Bucket&gt;
+    where Bucket: Bucket&lt;Key, Value&gt;,
+          Key: <a href="./lrs::ops::Eq.html">Eq</a>&lt;Key&gt; + <a href="./lrs::hash::Hash.html">Hash</a>,
+{
+    fn into_mut(self) -> &amp;'a mut Value
+}</pre></body></html>

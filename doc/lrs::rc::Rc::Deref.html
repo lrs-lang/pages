@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait implementation lrs::rc::Rc::Deref</title></head><body><h1>Trait implementation <a href="./lrs.html">lrs</a>::<a href="./lrs::rc.html">rc</a>::<a href="./lrs::rc::Rc.html">Rc</a>::<a href="./lrs::rc::Rc::Deref.html">Deref</a></h1><p>Objects that implement the immutable dereference operator.</p><h2>Syntax</h2><pre>impl&lt;T, H&gt; <a href="./lrs::ops::Deref.html">Deref</a> for <a href="./lrs::rc::Rc.html">Rc</a>&lt;T, H&gt;
+    where T: <a href="./lrs::marker::Leak.html">Leak</a>,
+          H: <a href="./lrs::alloc::Allocator.html">Allocator</a>,
+{
+    type Target = T;
+}</pre></body></html>

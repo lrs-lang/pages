@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Function lrs::intrinsics::move_val_init</title></head><body><h1>Function <a href="./lrs.html">lrs</a>::<a href="./lrs::intrinsics.html">intrinsics</a>::<a href="./lrs::intrinsics::move_val_init.html">move_val_init</a></h1><p>Stores a new value in an object without running the object's destructor.</p><h2>Syntax</h2><pre>unsafe extern "rust-intrinsic" fn move_val_init&lt;T&gt;(dst: *mut T, src: T) -> ()</pre><h2>Arguments</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>dst</td><td><p>The location where <code>src</code> will be stored.</p></td><tr><tr><td>src</td><td><p>The value to store in <code>dst</code>.</p></td><tr></tbody></table><h2>Remarks</h2><p>This can be used to initialize memory that was previously created with <a href="./lrs::intrinsics::uninit.html">uninit</a>.</p><h2>Examples</h2><pre>unsafe fn f(x: T) {
+    let mut y = uninit():
+    move_val_init(&amp;mut y, x);
+}</pre><h2>See also</h2><ul><li><p><a href="./lrs::intrinsics::uninit.html">uninit</a></p></li></ul></body></html>

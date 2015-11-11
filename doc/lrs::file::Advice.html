@@ -1,0 +1,9 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Enum lrs::file::Advice</title></head><body><h1>Enum <a href="./lrs.html">lrs</a>::<a href="./lrs::file.html">file</a>::<a href="./lrs::file::Advice.html">Advice</a></h1><p>Advice used to optimize file access.</p><h2>Syntax</h2><pre>enum Advice {
+    DontNeed,
+    Need,
+    NoReuse,
+    Normal,
+    Random,
+    Sequential,
+}</pre><h2>Variants</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::file::Advice::DontNeed.html">DontNeed</a></td><td><p>The range will not be accessed.</p></td></tr><tr><td><a href="./lrs::file::Advice::Need.html">Need</a></td><td><p>The range will be accessed soon.</p></td></tr><tr><td><a href="./lrs::file::Advice::NoReuse.html">NoReuse</a></td><td><p>The range will be accessed only once.</p></td></tr><tr><td><a href="./lrs::file::Advice::Normal.html">Normal</a></td><td><p>Default.</p></td></tr><tr><td><a href="./lrs::file::Advice::Random.html">Random</a></td><td><p>Optimize for random access.</p></td></tr><tr><td><a href="./lrs::file::Advice::Sequential.html">Sequential</a></td><td><p>Optimize for sequential access.</p></td></tr></tbody></table><h2>Trait implementations</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="./lrs::file::Advice::Clone.html">Clone</a></td><td><p>Objects that can be duplicated.</p></td></tr><tr><td><a href="./lrs::file::Advice::Copy.html">Copy</a></td><td><p>Objects that can safely be copied via <code>memcpy</code>.</p></td></tr><tr><td><a href="./lrs::file::Advice::Eq.html">Eq</a></td><td><p>Objects that implement the binary <code>==</code> and <code>!=</code> operators.</p></td></tr><tr><td><a href="./lrs::file::Advice::MaybeClone.html">MaybeClone</a></td><td><p>Objects that can be duplicated.</p></td></tr></tbody></table></body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::hash::Hasher</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::hash.html">hash</a>::<a href="./lrs::hash::Hasher.html">Hasher</a></h1><p>Objects that can hash other objects.</p><h2>Syntax</h2><pre>trait Hasher {
+    type Digest: <a href="./lrs::into::Into.html">Into</a>&lt;u64&gt;;
+    type Seed: Default;
+
+    /* Required methods */
+    fn digest(&self) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+    fn hash_bytes&lt;S&gt;(val: &amp;[u8], seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn new&lt;S&gt;(seed: S) -> Self
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn reset&lt;S&gt;(&mut self, seed: S) -> ()
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn write_bytes(&mut self, val: &amp;[u8]) -> ()
+
+    /* Provided methods */
+    fn hash&lt;T, S&gt;(val: &amp;T, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+              T: <a href="./lrs::hash::Hash.html">Hash</a> + ?<a href="./lrs::marker::Sized.html">Sized</a>,
+    fn hash_i16&lt;S&gt;(val: i16, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_i32&lt;S&gt;(val: i32, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_i64&lt;S&gt;(val: i64, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_i8&lt;S&gt;(val: i8, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_isize&lt;S&gt;(val: isize, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_u16&lt;S&gt;(val: u16, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_u32&lt;S&gt;(val: u32, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_u64&lt;S&gt;(val: u64, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_u8&lt;S&gt;(val: u8, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn hash_usize&lt;S&gt;(val: usize, seed: S) -> &lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Digest
+        where S: <a href="./lrs::into::Into.html">Into</a>&lt;&lt;Self as <a href="./lrs::hash::Hasher.html">Hasher</a>&gt;::Seed&gt;,
+    fn write_i16(&mut self, val: i16) -> ()
+    fn write_i32(&mut self, val: i32) -> ()
+    fn write_i64(&mut self, val: i64) -> ()
+    fn write_i8(&mut self, val: i8) -> ()
+    fn write_isize(&mut self, val: isize) -> ()
+    fn write_u16(&mut self, val: u16) -> ()
+    fn write_u32(&mut self, val: u32) -> ()
+    fn write_u64(&mut self, val: u64) -> ()
+    fn write_u8(&mut self, val: u8) -> ()
+    fn write_usize(&mut self, val: usize) -> ()
+}</pre><h2>Associated types</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Digest</td><td><p>The output of the hash operation.</p></td></tr><tr><td>Seed</td><td><p>The type used to seed a hash operation.</p></td></tr></tbody></table><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&self</code></td><td><a href="./lrs::hash::Hasher::digest.html">digest</a></td><td><p>Returns the digest of the hasher.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash.html">hash</a></td><td><p>Hashes a value with this hasher.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_bytes.html">hash_bytes</a></td><td><p>Hashes a sequence of bytes.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_i16.html">hash_i16</a></td><td><p>Hashes an <code>i16</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_i32.html">hash_i32</a></td><td><p>Hashes an <code>i32</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_i64.html">hash_i64</a></td><td><p>Hashes an <code>i64</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_i8.html">hash_i8</a></td><td><p>Hashes an <code>i8</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_isize.html">hash_isize</a></td><td><p>Hashes an <code>usize</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_u16.html">hash_u16</a></td><td><p>Hashes a <code>u16</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_u32.html">hash_u32</a></td><td><p>Hashes a <code>u32</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_u64.html">hash_u64</a></td><td><p>Hashes a <code>u64</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_u8.html">hash_u8</a></td><td><p>Hashes a <code>u8</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::hash_usize.html">hash_usize</a></td><td><p>Hashes a <code>usize</code>.</p></td></tr><tr><td><code class="no_break"></code></td><td><a href="./lrs::hash::Hasher::new.html">new</a></td><td><p>Creates a new hasher for stateful hashing.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::reset.html">reset</a></td><td><p>Resets the hasher to it's initial state with a new seed.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_bytes.html">write_bytes</a></td><td><p>Adds a slice of bytes to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_i16.html">write_i16</a></td><td><p>Adds an <code>i16</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_i32.html">write_i32</a></td><td><p>Adds an <code>i32</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_i64.html">write_i64</a></td><td><p>Adds an <code>i64</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_i8.html">write_i8</a></td><td><p>Adds an <code>i8</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_isize.html">write_isize</a></td><td><p>Adds an <code>isize</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_u16.html">write_u16</a></td><td><p>Adds a <code>u16</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_u32.html">write_u32</a></td><td><p>Adds a <code>u32</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_u64.html">write_u64</a></td><td><p>Adds a <code>u64</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_u8.html">write_u8</a></td><td><p>Adds a <code>u8</code> to the hasher.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::hash::Hasher::write_usize.html">write_usize</a></td><td><p>Adds a <code>usize</code> to the hasher.</p></td></tr></tbody></table></body></html>

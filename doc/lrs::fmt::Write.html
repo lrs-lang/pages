@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /> 
+                    <link rel="stylesheet" type="text/css" href="style.css" /><title>Trait lrs::fmt::Write</title></head><body><h1>Trait <a href="./lrs.html">lrs</a>::<a href="./lrs::fmt.html">fmt</a>::<a href="./lrs::fmt::Write.html">Write</a></h1><p>Objects that wrap a byte-stream for writing.</p><h2>Syntax</h2><pre>trait Write {
+    /* Required methods */
+    fn gather_write(&mut self, buf: &amp;[&amp;[u8]]) -> <a href="./lrs::result::Result.html">Result</a>&lt;usize, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+
+    /* Provided methods */
+    fn write(&mut self, buf: &amp;[u8]) -> <a href="./lrs::result::Result.html">Result</a>&lt;usize, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+    fn write_all(&mut self, buf: &amp;[u8]) -> <a href="./lrs::result::Result.html">Result</a>&lt;usize, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+    fn write_str(&mut self, buf: &amp;str) -> <a href="./lrs::result::Result.html">Result</a>&lt;usize, <a href="./lrs::error::Errno.html">Errno</a>&gt;
+}</pre><h2>Methods</h2><table><thead><tr><th>Receiver</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::fmt::Write::gather_write.html">gather_write</a></td><td><p>Writes multiple buffers to the byte-stream.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::fmt::Write::write.html">write</a></td><td><p>Write a buffer to the byte stream.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::fmt::Write::write_all.html">write_all</a></td><td><p>Tries to write the complete buffer to the byte-stream.</p></td></tr><tr><td><code class="no_break">&mut self</code></td><td><a href="./lrs::fmt::Write::write_str.html">write_str</a></td><td><p>Writes a string to the byte-stream.</p></td></tr></tbody></table></body></html>
