@@ -28,6 +28,18 @@ th, td {
     vertical-align: middle;
 }
 
+body > h1:first-child {
+    -webkit-margin-before: 0em;
+}
+
+td > p:first-child {
+    -webkit-margin-before: 0em;
+}
+
+td > p:last-child {
+    -webkit-margin-after: 0em;
+}
+
 th {
     background-color: #EEE;
     color: #333;
